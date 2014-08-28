@@ -1,0 +1,4 @@
+QRBundle
+========
+
+QRCodeGenerator
