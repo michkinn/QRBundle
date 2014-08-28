@@ -1,0 +1,35 @@
+{
+    "name": "negko/qr-bundle",
+    "description": "QR Code Generator",
+    "keywords": ["image manipulation"],
+    "homepage": "https://github.com/michkinn/QRBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "repositories":[
+        {
+            "type":"git",
+            "url":"git://github.com/michkinn/QRBundle.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Greg SCHURGAST",
+            "email": "greg@negko.com",
+            "homepage": "http://www.negko.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.*",
+        "imagine/Imagine": "v0.5.0"
+    },
+    "require-dev": {
+        "makasim/temp-file": "dev-master"
+    },
+    "suggest": {
+        "symfony/twig-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Negko\\Bundle\\QRBundle": "" }
+    },
+    "target-dir": "Negko/Bundle/QRBundle"
+}
