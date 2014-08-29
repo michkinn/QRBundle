@@ -1,15 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gsch
- * Date: 28/08/2014
- * Time: 18:31
- */
 
 namespace Negko\QRBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 
-class QRBundle {
+class QRBundle extends BaseBundle
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getNamespace()
+    {
+        return __NAMESPACE__;
+    }
 
-} 
+    /**
+     * {@inheritdoc}
+     */
+    public function getPath()
+    {
+        return strtr(__DIR__, '\\', '/');
+    }
+}
