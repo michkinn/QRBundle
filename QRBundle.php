@@ -1,10 +1,10 @@
 <?php
 
-namespace Negko\QRBundle;
+namespace Negko\QrBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 
-class QRBundle extends BaseBundle
+class QrBundle extends BaseBundle
 {
     /**
      * {@inheritdoc}

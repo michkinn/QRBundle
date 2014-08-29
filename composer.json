@@ -29,8 +29,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Negko\\QRBundle": ""
+            "Negko\\QrBundle": ""
         }
     },
-    "target-dir" : "Negko/QRBundle"
+    "target-dir" : "Negko/QrBundle"
 }

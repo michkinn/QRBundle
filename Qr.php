@@ -6,10 +6,10 @@
  * Time: 09:47
  */
 
-namespace Negko\QRBundle;
+namespace Negko\QrBundle;
 
 
-use Negko\QRBundle\Exception\InvalidArgumentException;
+use Negko\QrBundle\Exception\InvalidArgumentException;
 
 class Qr {
 
@@ -69,7 +69,7 @@ class Qr {
 
     public function initQr()
     {
-        $this->qr = imagecreatefrompng( $this->getQRUrl() );
+        $this->qr = imagecreatefrompng( $this->getQrUrl() );
     }
 
     public function getQr(){
@@ -82,22 +82,22 @@ class Qr {
     public function addLogo( $logo_path ){
         $logo = imagecreatefromstring( file_get_contents( $logo_path ) );
 
-        $QR_width = imagesx($this->getQr());
-        $QR_height = imagesy($this->getQr());
+        $Qr_width = imagesx($this->getQr());
+        $Qr_height = imagesy($this->getQr());
         $logo_width = imagesx($logo);
         $logo_height = imagesy($logo);
 
-        $logo_qr_width = $QR_width/1.5;
+        $logo_qr_width = $Qr_width/1.5;
         $scale = $logo_width/$logo_qr_width;
         $logo_qr_height = $logo_height/$scale;
 
-        imagecopyresampled($this->qr, $logo, ($QR_width-$logo_qr_width)/2 , ($QR_height-$logo_qr_height)/2 , 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+        imagecopyresampled($this->qr, $logo, ($Qr_width-$logo_qr_width)/2 , ($Qr_height-$logo_qr_height)/2 , 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
 
     }
 
-    private function getQRUrl()
+    private function getQrUrl()
     {
-        return self::API_CHART_URL . '?cht=qr&chld=H|1&chs='. $this->getSize() .'&chl='. $this->getData();
+        return self::API_CHART_URL . '?cht=qr&chld=H|1&chs='. $this->getSize() .'&chl='. urlencode($this->getData());
     }
 
     /**

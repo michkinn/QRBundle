@@ -1,6 +1,6 @@
 <?php
 
-namespace Negko\QRBundle\Exception;
+namespace Negko\QrBundle\Exception;
 
 use InvalidArgumentException as BaseInvalidArgumentException;
 
