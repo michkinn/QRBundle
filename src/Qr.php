@@ -67,22 +67,6 @@ class Qr {
         return $this->_size;
     }
 
-    /**
-     * @param null $qr
-     */
-    public function setQr($qr)
-    {
-        $this->qr = $qr;
-    }
-
-    /**
-     * @return null
-     */
-    public function getQr()
-    {
-        return $this->qr;
-    }
-
     public function initQr()
     {
         $this->qr = imagecreatefrompng( $this->getQRUrl() );
