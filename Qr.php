@@ -52,6 +52,10 @@ class Qr {
      */
     public function setSize($size)
     {
+        if ( $size > $this->_max_size ){
+            throw new InvalidArgumentException('Size cannot exceed '.$this->_max_size.', ' . $size . ' used');
+        }
+
         $this->_size = $size;
     }
 
@@ -81,10 +85,6 @@ class Qr {
 
     public function initQr()
     {
-        if ( $this->getSize() > $this->_max_size ){
-            throw new InvalidArgumentException('Size cannot exceed '.$this->_max_size.', ' . $this->getSize() . ' used');
-        }
-
         $this->qr = imagecreatefrompng( $this->getQRUrl() );
     }
 
