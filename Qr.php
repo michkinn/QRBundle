@@ -219,6 +219,4 @@ class Qr {
     public function wifi($type = null, $ssid = null, $password = null) {
         $this->setData("WIFI:T:{$type};S{$ssid};{$password};;");
     }
-
-
 } 
